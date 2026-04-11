@@ -1,0 +1,103 @@
+// 함수에서 제일 중요한거
+
+// 뭐를 넣어서 (input)
+
+// 뭐가 나오냐 (output)
+
+input = map_info? 
+
+output = map 
+
+지금 우리가 해야되는거 
+
+**
+
+obstacle과 empty만 있는 지도만들기  
+
+-> 지도의 행,열 인덱스 읽기 (read)
+
+-> 지도에서 가장 큰 사각형 인덱스 구하기
+
+첫번째 행부터 순회 (맨 위쪽)
+
+시작 인덱스 부터 최초 장애물을 만날때까지 길이 구하기
+
+map <- N x M martix
+
+r = 0;
+c = 0;
+
+current_row;
+current_col;
+
+max_sqr = 0;
+min_row <- 2차원 배열
+diff_col = 0;
+
+while (r < N)
+{
+	while (c < M)
+	{
+		current_col = c;
+		
+		while (map[r][current_col] != "obstacle" 
+				|| map[r][current_col] != M)
+		{
+			current_col ++;
+		
+			diff_col = current_col - c;
+			current_row = r;
+			while (map[current_row][current_col] != "obstacle" 
+				|| map[current_row][current_col] != N)
+				{
+					current_row ++;
+				}
+			
+			
+			while (diff_col > 0)
+			{
+				while()
+
+				current_col --;
+			}
+		}
+		c++;
+	}
+	r++;
+}
+
+
+{
+	len_row <- 같은 행에 끝 or 장애물을 만날때까지의 길이
+
+	i = 0;
+	j = 0; 
+	min <- 최소 세로길이
+	max <- 최대 사각형 넓이
+
+	while (j < len_row)
+	{
+		current_row = i
+		k = 0 <- 가능한 모든 가로 길이의 사각형을 구하기 위해 선언.
+		
+		while (k < j)
+		{
+			while (map[current_row][k] != "obstacle")
+				current_row --;
+			len_col <- current_row - i;	
+			if (len_col < min)
+				min = len_col			
+			k++;
+		}
+		if (max < (j - k) * min) 
+				max = i * min		 
+		j ++ 
+		k = 0;	
+	}
+	i --;
+}
+-> 가장 큰 사각형이 그려진 지도 만들기
+
+-> 완성된 지도 출력하기
+
+

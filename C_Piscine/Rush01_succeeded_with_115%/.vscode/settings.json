@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"stdlib.h": "c",
+		"views.h": "c",
+		"rush01.h": "c"
+	}
+}

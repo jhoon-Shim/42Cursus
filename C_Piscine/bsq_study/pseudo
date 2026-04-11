@@ -1,0 +1,74 @@
+map : N by M matrix with obstacles, emptys.
+obs : 2d arr, 장애물이 있는 좌표값이 들어가있음 
+	ex) obs[2][1] = 1 -> 2 행 1열에 장애물이 있다. 
+
+find_max 
+	input = map(obs, emp)
+	output = int max[3] -> {row_left_top, col_left_top, max_sqr} 
+
+is_valid
+	input = map(obs, emp), row_current, col_current, num
+	output = true/false;
+
+print_map
+	input = map(obs, emp), max
+	output = map(ful, emp, obs)
+
+int * find_max (map(obs,emp))
+{
+	int r = 0;
+	int c = 0;
+	int num = 0;
+	int max[3] = {0,0,0};
+	int tmp_sqr = 0;
+
+	while (r < N)
+	{
+		while(c < M)
+		{
+			
+			while(r + num < N && c + num < M;)
+			{
+				if(is_valid(map,r,c,num))
+				{
+					tmp_sqr = num * num;
+					if(max[2] < tmp_sqr)
+					{
+						max[2] = tmp_sqr;
+						max[1] = c;
+						max[0] = r;
+					}
+				}
+				num ++;
+			}
+			num = 0;
+			c++;
+		}
+		r++;
+	}
+}
+
+int is_valid(map(obs,emp),row, col, num)
+{
+	
+	# // 1. 4 꼭짓점 중 하나라도 OBS의 좌표와 같은 경우
+
+	# if (obs[row][col] || obs[row+num][col] 
+	# 	|| obs[row][col+num] || obs[row+num][col+num] )
+	# 	return (0);
+
+	// 2. 정사각형 넷 꼭짓점의 범주안에 OBS 의 좌표가 존재하는경우
+	int r = row;
+	int c = col;
+	while (r <= row + num)
+	{
+		while(c <= col + num)
+		{
+			if (obs[r][c] == 1)
+				return (0);
+			c++
+		}
+		r++;
+	}
+	return (1);
+}
