@@ -1,0 +1,4 @@
+Hello, 42!
+This is the second line.
+GNL is working great.
+Last line without newline (maybe)
